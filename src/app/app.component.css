@@ -1,0 +1,51 @@
+/* Style the toolbar */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+}
+
+/* Style the menu button */
+.example-icon {
+  font-size: 24px;
+}
+
+/* Style the home icon button */
+.home-icon {
+  margin-right: 16px;
+}
+
+/* Style the side navigation */
+mat-sidenav {
+  width: 300px;
+  background: #c39393;
+}
+
+/* Style the navigation list */
+mat-nav-list {
+  padding: 0;
+  margin: 16px 0;
+}
+
+/* Style the navigation links */
+
+
+/* Style the active navigation link */
+mat-nav-list a.active-link {
+  background-color: #eee;
+  color : #b52222;
+  text-decoration: aqua;
+}
+
+/* Style the main content */
+mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav-container {
+  height: calc(205vh - 115vh);
+}
+
+
