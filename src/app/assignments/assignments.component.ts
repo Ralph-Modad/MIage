@@ -14,8 +14,8 @@ export class AssignmentsComponent implements OnInit {
   color = 'green';
   id = 'monParagraphe';
   boutonDesactive = true;
-  formVisible = false;
-  assignmentSelectionne?: Assignment;
+  // formVisible = false;
+  // assignmentSelectionne?: Assignment;
   assignments!: Assignment[];
 
   // Constructor
@@ -40,22 +40,23 @@ export class AssignmentsComponent implements OnInit {
     if (a.rendu) return 'green';
     else return 'red';
   }
-
+/*
   assignmentClique(a: Assignment) {
     this.assignmentSelectionne = a;
   }
-
+*/
+/*
   onAddAssignmentBtnClick() {
-    this.formVisible = true;
+    // this.formVisible = true;
   }
-
-  onNouvelAssignment(event: Assignment) {
-    this.assignmentService.addAssignment(event).subscribe((message) => {
-      console.log(message);
-      this.formVisible = false;
-    }
-    );
-  }
+*/
+  // onNouvelAssignment(event: Assignment) {
+  //   this.assignmentService.addAssignment(event).subscribe((message) => {
+  //     console.log(message);
+  //     // this.formVisible = false;
+  //   }
+  //   );
+  // }
 
   onDeleteAssignment(a: Assignment) {
     // position de l'assignment à supprimer, dans le tableau

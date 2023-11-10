@@ -14,15 +14,21 @@
 <mat-sidenav-container>
   <mat-sidenav [(opened)]="opened">
     <mat-nav-list>
-      <a mat-list-item routerLink="/devoirs" routerLinkActive="active-link">Liste des devoirs</a>
+      <a mat-list-item routerLink="/home" routerLinkActive="active-link">Liste des devoirs</a>
       <a mat-list-item routerLink="/add" routerLinkActive="active-link">Ajout d'un devoir</a>
-      <a mat-list-item routerLink="/edit" routerLinkActive="active-link">Modification d'un devoir</a>
+      <a mat-list-item [routerLink]="['/assignment']" routerLinkActive="active-link">Modification d'un devoir</a>
       <a mat-list-item routerLink="/supprimer" routerLinkActive="active-link">Suppression d'un devoir</a>
       <a mat-list-item routerLink="/generate" routerLinkActive="active-link">Génération de données de test</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-assignments></app-assignments>
+    <h1>
+      <nav><a routerLink="/home">{{title}}</a></nav>
+    </h1>
+    <button mat-icon-button [routerLink]="['/login']">
+  <mat-icon>login</mat-icon>
+</button>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

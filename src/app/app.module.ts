@@ -20,7 +20,28 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { RouterModule, Routes } from '@angular/router';
+import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
+import { authGuard } from './shared/auth.guard';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { LoginComponent } from './login/login.component';
 
+
+const routes: Routes = [
+  { path: 'home', component: AssignmentsComponent, canActivate: [authGuard] },
+  { path: 'add', component: AddAssignmentComponent },
+  {
+    path: 'assignment/:id',
+    component: AssignmentDetailComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'assignment/:id/edit',
+    component: EditAssignmentComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'login', component: LoginComponent },
+];
 
 @NgModule({
   declarations: [
@@ -29,7 +50,10 @@ import { AddAssignmentComponent } from './assignments/add-assignment/add-assignm
     RenduDirective,
     NonRenduDirective,
     AssignmentDetailComponent,
-    AddAssignmentComponent
+    AddAssignmentComponent,
+    EditAssignmentComponent,
+    LoginComponent
+
 
   ],
   imports: [
@@ -38,7 +62,7 @@ import { AddAssignmentComponent } from './assignments/add-assignment/add-assignm
     MatButtonModule, MatIconModule, MatDividerModule,
     MatFormFieldModule, MatInputModule,
     FormsModule,
-    MatSidenavModule, MatToolbarModule, MatListModule, MatDatepickerModule, MatNativeDateModule,MatCardModule, MatCheckboxModule
+    MatSidenavModule, MatToolbarModule, MatListModule, MatDatepickerModule, MatNativeDateModule,MatCardModule, MatCheckboxModule,RouterModule.forRoot(routes), MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
